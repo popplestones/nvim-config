@@ -111,7 +111,6 @@ return {
       marksman = {},
       gopls = {},
       pyright = {},
-      rust_analyzer = {},
       lua_ls = require("lsp.servers.lua_ls"),
       ts_ls = require("lsp.servers.ts_ls"),
       tailwindcss = {},

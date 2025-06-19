@@ -3,7 +3,6 @@ return {
   dependencies = {
     "rafamadriz/friendly-snippets",
     "moyiz/blink-emoji.nvim",
-    "Exafunction/codeium.nvim",
   },
   version = "1.*",
 
@@ -23,7 +22,7 @@ return {
     signature = { enabled = true },
 
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "emoji", "codeium" },
+      default = { "lsp", "path", "snippets", "buffer", "emoji" },
       providers = {
         emoji = {
           module = "blink-emoji",
@@ -36,11 +35,6 @@ return {
               return { ":" }
             end,
           },
-        },
-        codeium = {
-          module = "codeium.blink",
-          name = "Codeium",
-          async = true,
         },
       },
     },
