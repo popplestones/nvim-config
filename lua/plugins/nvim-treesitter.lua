@@ -1,0 +1,61 @@
+return {
+  "nvim-treesitter/nvim-treesitter",
+  build = ":TSUpdate",
+  config = function()
+    local configs = require("nvim-treesitter.configs")
+    ---@diagnostic disable-next-line: missing-fields
+    configs.setup({
+      ensure_installed = {
+        "bash",
+        "c",
+        "cpp",
+        "css",
+        "csv",
+        "desktop",
+        "dockerfile",
+        "fish",
+        "git_config",
+        "gleam",
+        "html",
+        "ini",
+        "javascript",
+        "json",
+        "lua",
+        "luadoc",
+        "markdown",
+        "markdown_inline",
+        "muttrc",
+        "nginx",
+        "passwd",
+        "php",
+        "powershell",
+        "python",
+        "rust",
+        "sql",
+        "ssh_config",
+        "tmux",
+        "toml",
+        "typescript",
+        "vue",
+        "xml",
+        "yaml",
+        "zig",
+      },
+      matchup = {
+        enable = true,
+      },
+      sync_install = false,
+      highlight = { enable = true },
+      indent = { enable = true },
+      incremental_selection = {
+        enable = true,
+        keymaps = {
+          init_selection = "<Enter>",
+          node_incremental = "<Enter>",
+          scope_incremental = false,
+          node_decremental = "<Backspace>",
+        },
+      },
+    })
+  end,
+}
