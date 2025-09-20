@@ -4,7 +4,16 @@ return {
   -- dependencies = { "nvim-tree/nvim-web-devicons" },
   -- or if using mini.icons/mini.nvim
   dependencies = { "echasnovski/mini.icons" },
-  opts = {},
+  opts = {
+    actions = {
+      ["ctrl-q"] = function()
+        return {
+          require("fzf-lua.actions").file_sel_to_qf,
+          prefix = "select-all",
+        }
+      end,
+    },
+  },
   keys = {
     {
       "<leader>ff",

@@ -107,7 +107,16 @@ return {
     })
 
     local servers = {
-      bashls = {},
+      bashls = {
+        filetypes = { "bash", "sh" },
+        settings = {
+          bashIde = {
+            shellcheckArguments = {
+              "--exclude=SC2034,SC2086,SC2155", -- unused variable, double quote to prevent globbing, declare and assign separately
+            },
+          },
+        },
+      },
       marksman = {},
       gopls = {},
       pyright = {},

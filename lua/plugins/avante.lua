@@ -5,11 +5,22 @@ return {
   opts = {
     -- add any opts here
     -- for example
-    provider = "openai",
+    provider = "ollama",
     providers = {
+      ollama = {
+        endpoint = "http://localhost:11434",
+        model = "deepseek-coder:6.7b-instruct",
+        timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
+        extra_request_body = {
+          temperature = 0.2,
+          top_p = 0.95,
+          num_ctx_tokens = 8192,
+          stop = { "</s" },
+        },
+      },
       openai = { -- ☁️ GPT-4o via OpenAI API
         endpoint = "https://api.openai.com/v1",
-        model = "gpt-4o", -- your desired model (or use gpt-4o, etc.)
+        model = "gpt-4o-mini", -- your desired model (or use gpt-4o, etc.)
         timeout = 30000, -- Timeout in milliseconds, increase this for reasoning models
         extra_request_body = {
           temperature = 0.75,

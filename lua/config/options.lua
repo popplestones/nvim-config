@@ -29,10 +29,13 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 
 vim.o.confirm = true
+vim.o.relativenumber = true
+vim.o.wrap = false
+vim.o.conceallevel = 2
+vim.o.pumheight = 10
+vim.o.smoothscroll = true
 
--- Code folding
-vim.o.foldmethod = "expr"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldlevelstart = 10
+-- Swap file settings
+vim.o.swapfile = false
 
 -- vim: ts=2 sts=2 sw=2 et
