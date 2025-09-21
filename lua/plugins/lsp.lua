@@ -8,7 +8,6 @@ return {
     "saghen/blink.cmp",
   },
   config = function()
-    local lspconfig = require("lspconfig")
     local capabilities = require("blink.cmp").get_lsp_capabilities()
 
     vim.api.nvim_create_autocmd("LspAttach", {
@@ -139,7 +138,8 @@ return {
 
     for server_name, server_opts in pairs(servers) do
       server_opts.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server_opts.capabilities or {})
-      lspconfig[server_name].setup(server_opts)
+      vim.lsp.config(server_name, server_opts)
+      vim.lsp.enable(server_name)
     end
   end,
 }
